@@ -22,6 +22,8 @@ final class ViewedProductSubscriber extends AbstractEventSubscriber
 
     public function track(ResourceControllerEvent $resourceControllerEvent): void
     {
+        return; //Disable tracking viewed product
+
         if (!$this->trackingStrategy->track() || $this->botDetector->isBot()) {
             return;
         }
